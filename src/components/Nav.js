@@ -3,7 +3,6 @@ import React from 'react';
 function Nav () {
     return (
         <nav>
-            <img src={require ('./logo.png')} alt='logo'/>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/">About</a></li>

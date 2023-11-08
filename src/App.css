@@ -36,3 +36,63 @@
     transform: rotate(360deg);
   }
 }
+
+
+header {
+  display: flex;
+  background-color: #EDEFEE;
+}
+
+img {
+  max-height: 10%;
+  max-width: 10%;
+
+}
+
+nav > ul {
+  display: flex;
+}
+
+main {
+  display: flex;
+  flex-direction:column;
+}
+
+footer {
+  display: flex;
+  background-color: #EE9972;
+}
+
+.footer{
+  display: flex;
+}
+
+.HeroSection {
+  background-color: #495E57;
+}
+
+.Highlights {
+  background-color: #EDEFEE;
+}
+
+.Testimonials {
+  background-color: #495E57;
+}
+
+.About {
+  background-color: #FBDABB;
+}
+
+/* Letters */
+
+h1, h2, h3, h4 {
+  font-family: 'Markazi Text';
+}
+
+h5, h6, p, a {
+  font-family: sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}

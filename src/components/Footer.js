@@ -3,8 +3,8 @@ import React from 'react';
 function Footer () {
     return (
         <footer>
-            <img src={require ('./logo.png')} alt='logo'/>
-            <section>
+            <img src={require ('./logo.png')} alt='logo'className='logo'/>
+            <section className="footer">
                 <article>
                     <h5>Doormat navigation</h5>
                     <ul>
