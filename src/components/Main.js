@@ -2,7 +2,7 @@ import React from 'react';
 import HeroSection from './main components/HeroSection';
 import Highlights from './main components/Highlights';
 import Testimonials from './main components/Testimonials';
-import About from './main components/About';
+import About from './About';
 
 function Main () {
     return (
