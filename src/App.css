@@ -65,11 +65,21 @@ main {
 }
 
 footer {
-  display: flex;
   background-color: #EE9972;
 }
 
 .footer{
+  display: flex;
+}
+
+footer > div {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.footer > article {
   display: flex;
 }
 
@@ -107,9 +117,25 @@ img {
   background-color: #495E57;
 }
 
+.Testimonials > div {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.Review {
+  display: flex;
+  justify-content: center;
+}
+
 .About {
   background-color: #FBDABB;
 }
+
+.About > div {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
 
 /* Letters */
 
@@ -134,10 +160,7 @@ form > fieldset {
   background-color: #FBDABB;
 }
 
-button {
-  border-radius: 8%;
-  background-color: #F4CE14;
-  font-family: sans-serif;
-  color: #333333;
-  box-shadow: #333333;
+.reservations > div {
+  margin-left: 15%;
+  margin-right: 15%;
 }

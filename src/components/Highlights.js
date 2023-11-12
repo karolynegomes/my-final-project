@@ -9,7 +9,7 @@ function Highlights () {
     return (
         <section className='Highlights'>
                 <section style={{display: 'flex', justifyContent: 'space-between'}}>
-                    <h1 style={{color: "#495E57", fontSize: 30}}>Specials</h1>
+                    <h1 style={{color: "#495E57", fontSize: 25}}>Specials</h1>
                     <Button text={'Online menu'}></Button>
                 </section>
                 <section>
