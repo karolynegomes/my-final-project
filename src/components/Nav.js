@@ -10,7 +10,7 @@ function Nav () {
     <div style={{display: 'flex', flexDirection: 'column'}}>
         <nav>
                 <ul>
-                    <li><Link to="/" className="nav-item"><img className="logo" src={require ('./logo.png')} alt='logo'/></Link></li>
+                    <li><Link to="/" className="nav-item"><img className="logo" src={require ('./photos/logo.png')} alt='logo'/></Link></li>
                     <li><Link to ="/" className="nav-item">Home</Link></li>
                     <li><Link to ="/About" className="nav-item">About</Link></li>
                     <li><Link to ="/Menu" className="nav-item">Menu</Link></li>

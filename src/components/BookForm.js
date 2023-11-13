@@ -2,31 +2,12 @@ import React from "react";
 import { useState } from 'react';
 import Button from './Button';
 
-function BookForm () {
+function BookForm (props) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [date, setDate] = useState("");
     const [guests, setGuests] = useState("");
-    const [occasion, setOccasion] = useState([
-        'Click to select an occasion',
-        'Birthday',
-        'Anniversary',
-        'Engagement',
-        'Other',
-
-    ]);
-    const [availableTimes, setAvailableTimes] = useState([
-        'Click to select a time',
-        '12:00-13:00',
-        '13:00-14:00',
-        '14:00-15:00',
-        '15:00-16:00',
-        '19:00-20:00',
-        '20:00-21:00',
-        '21:00-22:00',
-        '22:00-23:00'
-      ]);
 
     const handleSubmit = (e) => {
         (e.preventDefault());
@@ -35,7 +16,8 @@ function BookForm () {
         setPhone("");
         setDate("");
         setGuests("");
-        setOccasion("");
+        props.setAvailableTimes("");
+        props.setOccasion("");
     }
 
 
@@ -46,8 +28,8 @@ function BookForm () {
                     <label htmlFor="date">Date</label>
                     <input id="date" type="date" value={date} onChange={(e)=>setDate(e.target.value)} required/>
                     <label htmlFor="time">Time</label>
-                    <select id="time" value={availableTimes} onChange={(e)=>setAvailableTimes(e.target.value)}>
-                        {availableTimes.map((time, index) => (
+                    <select id="time" value={props.availableTimes} onChange={(e)=>props.setAvailableTimes(e.target.value)}>
+                        {props.availableTimes.map((time, index) => (
                             <option key={index} value={time}>
                             {time}
                             </option>
@@ -56,8 +38,8 @@ function BookForm () {
                     <label htmlFor="guests">Guests</label>
                     <input id="guests" type="number" min={1} max={12} value={guests} onChange={(e)=>setGuests(e.target.value)} required/>
                     <label htmlFor="occasion">Occasion</label>
-                    <select id="occasion" value={occasion} onChange={(e)=>setOccasion(e.target.value)}>
-                        {occasion.map((occasion, index) => (
+                    <select id="occasion" value={props.occasion} onChange={(e)=>props.setOccasion(e.target.value)}>
+                        {props.occasion.map((occasion, index) => (
                             <option key={index} value={occasion}>
                             {occasion}
                             </option>

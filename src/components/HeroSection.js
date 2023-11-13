@@ -1,5 +1,4 @@
 import React from 'react';
-import BookForm from './BookForm';
 import Button from './Button';
 
 function HeroSection () {
@@ -18,7 +17,7 @@ function HeroSection () {
                     </p>
                     <Button text={'Book a table'}></Button>
                 </div >
-                <img className='herosection-photo' src={require('./restauranfood.jpg')} style={{maxWidth: 150, margin:50}}/>
+                <img className='herosection-photo' src={require('./photos/restauranfood.jpg')} style={{maxWidth: 150, margin:50}}/>
                 </div>
             </div>
         </section>

@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from './Button';
-import GreekSalad from './greek salad.jpg'
-import Bruchetta from './bruchetta.svg'
-import LemmonDessert from './lemon dessert.jpg'
+import GreekSalad from './photos/greek salad.jpg'
+import Bruchetta from './photos/bruchetta.svg'
+import LemmonDessert from './photos/lemon dessert.jpg'
 import Special from "./Special";
 
 function Highlights () {
