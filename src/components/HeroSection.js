@@ -4,7 +4,7 @@ import Button from './Button';
 
 function HeroSection () {
     return (
-        <section className='HeroSection'>
+        <section className='HeroSection' style={{display: 'flex', flexDirection: 'column'}}>
             <div>
                 <h1 style={{color: "#F4CE14"}}>Little Lemon</h1>
                 <h2 style={{color: "#EDEFEE"}}>Chicago</h2>
@@ -18,7 +18,7 @@ function HeroSection () {
                     </p>
                     <Button text={'Book a table'}></Button>
                 </div >
-                <img src={require('./restauranfood.jpg')} style={{maxWidth: 150, margin:50}}/>
+                <img className='herosection-photo' src={require('./restauranfood.jpg')} style={{maxWidth: 150, margin:50}}/>
                 </div>
             </div>
         </section>

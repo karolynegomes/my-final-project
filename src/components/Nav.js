@@ -1,13 +1,13 @@
 import React from 'react';import {Link} from 'react-router-dom';
 import {Routes, Route} from 'react-router-dom';
-import Home from './Home';
+import Main from './Main';
 import About from './About';
 import Menu from './Menu';
 import Reservations from './Reservations';
 
 function Nav () {
     return (
-    <div>
+    <div style={{display: 'flex', flexDirection: 'column'}}>
         <nav>
                 <ul>
                     <li><Link to="/" className="nav-item"><img className="logo" src={require ('./logo.png')} alt='logo'/></Link></li>
@@ -18,7 +18,7 @@ function Nav () {
                 </ul>
         </nav>
         <Routes>
-        <Route path="/" element= {<Home/>}/>
+        <Route path="/" element= {<Main/>}/>
         <Route path="/About" element= {<About/>}/>
         <Route path="/Menu" element= {<Menu/>}/>
         <Route path="/Reservations" element= {<Reservations/>}/>

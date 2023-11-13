@@ -3,7 +3,7 @@ import Restaurant from './icons_assets/Mario and Adrian A.jpg'
 
 function About () {
     return (
-        <section className='About'>
+        <section className='About' style={{display: 'flex'}}>
             <div>
                 <h1 style={{color: "#495E57", fontSize: 25}}>About</h1>
                 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: 30}}>

@@ -9,15 +9,15 @@ function BookForm () {
     const [date, setDate] = useState("");
     const [guests, setGuests] = useState("");
     const [occasion, setOccasion] = useState([
-        'Select an occasion',
+        'Click to select an occasion',
         'Birthday',
         'Anniversary',
         'Engagement',
         'Other',
-    ]);
 
+    ]);
     const [availableTimes, setAvailableTimes] = useState([
-        'Select a time',
+        'Click to select a time',
         '12:00-13:00',
         '13:00-14:00',
         '14:00-15:00',
@@ -34,7 +34,6 @@ function BookForm () {
         setEmail("");
         setPhone("");
         setDate("");
-        setAvailableTimes("");
         setGuests("");
         setOccasion("");
     }
@@ -44,7 +43,6 @@ function BookForm () {
         <div>
             <form onSubmit={handleSubmit}>
                 <fieldset>
-                    <h3>Reservation details</h3>
                     <label htmlFor="date">Date</label>
                     <input id="date" type="date" value={date} onChange={(e)=>setDate(e.target.value)} required/>
                     <label htmlFor="time">Time</label>
@@ -67,12 +65,11 @@ function BookForm () {
                     </select>
                 </fieldset>
                 <fieldset>
-                    <h3>Customer details</h3>
-                    <label htmlFor="name">Name:</label>
+                    <label htmlFor="name">Name</label>
                     <input value={name} id="name" onChange={(e)=>setName(e.target.value)} required/>
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="email">Email</label>
                     <input value={email} id="email" onChange={(e)=>setEmail(e.target.value)} required/>
-                    <label htmlFor="phonenumber">Phone number:</label>
+                    <label htmlFor="phonenumber">Phone number</label>
                     <input value={phone} id="phonenumber" onChange={(e)=>setPhone(e.target.value)}/>
                 </fieldset>
                 <fieldset>

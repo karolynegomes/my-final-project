@@ -4,9 +4,8 @@ import BookForm from './BookForm';
 function Reservations () {
     return (
         <section className="reservations">
-            <div>
-                <h1>Little Lemon</h1>
-                <h2>Reservations</h2>
+            <div className="form-div">
+                <h2 style={{color: '#495E57'}}>Reservations</h2>
                 <BookForm></BookForm>
             </div>
         </section>
