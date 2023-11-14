@@ -20,13 +20,19 @@ function BookForm (props) {
         props.setOccasion("");
     }
 
+    const handleDateChange = (e) => {
+        const selectedDate = e.target.value;
+        setDate(selectedDate);
+        props.updateTimes(selectedDate);
+      };
+
 
     return(
         <div>
             <form onSubmit={handleSubmit}>
                 <fieldset>
                     <label htmlFor="date">Date</label>
-                    <input id="date" type="date" value={date} onChange={(e)=>setDate(e.target.value)} required/>
+                    <input id="date" type="date" value={date} onChange={handleDateChange} required/>
                     <label htmlFor="time">Time</label>
                     <select id="time" value={props.availableTimes} onChange={(e)=>props.setAvailableTimes(e.target.value)}>
                         {props.availableTimes.map((time, index) => (

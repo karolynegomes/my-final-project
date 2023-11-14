@@ -4,9 +4,19 @@ import Highlights from './Highlights';
 import Testimonials from './Testimonials';
 import About from './About';
 import BookForm from './BookForm';
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
 
 function Main () {
+
+    function updateTimes ()  {
+        return ({availableTimes})
+    }
+
+    function initializeTimes () {
+        return ({availableTimes} = '')
+    }
+
+    const [state, dispatch] = useReducer(updateTimes, initializeTimes)
 
     const [availableTimes, setAvailableTimes] = useState([
         'Click to select a time',
@@ -20,7 +30,7 @@ function Main () {
         '22:00-23:00'
       ]);
 
-      const [occasion, setOccasion] = useState([
+    const [occasion, setOccasion] = useState([
         'Click to select an occasion',
         'Birthday',
         'Anniversary',
@@ -29,11 +39,12 @@ function Main () {
 
     ]);
 
+
     return (
         <main>
             <HeroSection></HeroSection>
             <Highlights></Highlights>
-            <BookForm occasion={occasion} setOccasion={setOccasion} availableTimes={availableTimes} setAvailableTimes={setAvailableTimes}></BookForm>
+            <BookForm updateTimes={updateTimes} occasion={occasion} setOccasion={setOccasion} availableTimes={availableTimes} setAvailableTimes={setAvailableTimes}></BookForm>
             <Testimonials></Testimonials>
             <About></About>
         </main>
