@@ -18,7 +18,7 @@ function Nav () {
                 </ul>
         </nav>
         <Routes>
-        <Route path="/" element= {<Main/>}/>
+        <Route path="/"/>
         <Route path="/About" element= {<About/>}/>
         <Route path="/Menu" element= {<Menu/>}/>
         <Route path="/Reservations" element= {<Reservations/>}/>
