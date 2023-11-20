@@ -18,33 +18,33 @@ function Main () {
 
     const [state, dispatch] = useReducer(updateTimes, initializeTimes)
 
-    const [availableTimes, setAvailableTimes] = useState([
+    const availableTimes = [
         'Click to select a time',
-        '12:00-13:00',
-        '13:00-14:00',
-        '14:00-15:00',
-        '15:00-16:00',
-        '19:00-20:00',
-        '20:00-21:00',
-        '21:00-22:00',
-        '22:00-23:00'
-      ]);
+        '12:00 - 13:00',
+        '13:00 - 14:00',
+        '14:00 - 15:00',
+        '15:00 - 16:00',
+        '19:00 - 20:00',
+        '20:00 - 21:00',
+        '21:00 - 22:00',
+        '22:00 - 23:00'
+      ];
 
-    const [occasion, setOccasion] = useState([
+    const occasion = [
         'Click to select an occasion',
         'Birthday',
         'Anniversary',
         'Engagement',
         'Other',
 
-    ]);
+      ];
 
 
     return (
         <main>
             <HeroSection></HeroSection>
             <Highlights></Highlights>
-            <BookForm updateTimes={updateTimes} occasion={occasion} setOccasion={setOccasion} availableTimes={availableTimes} setAvailableTimes={setAvailableTimes}></BookForm>
+            <BookForm updateTimes={updateTimes} occasion={occasion} availableTimes={availableTimes}></BookForm>
             <Testimonials></Testimonials>
             <About></About>
         </main>

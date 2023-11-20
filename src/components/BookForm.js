@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Button from './Button';
 
 function BookForm (props) {
@@ -8,6 +8,9 @@ function BookForm (props) {
     const [phone, setPhone] = useState("");
     const [date, setDate] = useState("");
     const [guests, setGuests] = useState("");
+    const selectRefTime = useRef(null);
+    const selectRefOccasion = useRef(null);
+
 
     const handleSubmit = (e) => {
         (e.preventDefault());
@@ -16,8 +19,8 @@ function BookForm (props) {
         setPhone("");
         setDate("");
         setGuests("");
-        props.setAvailableTimes("");
-        props.setOccasion("");
+        selectRefTime.current.value = "Caca";
+        selectRefOccasion.current.value = "Culo";
     }
 
     const handleDateChange = (e) => {
@@ -28,40 +31,37 @@ function BookForm (props) {
 
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div id="reservations" className="reservations" style={{display: 'flex', justifyContent: 'center'}}>
+            <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column'}}>
+            <h2 style={{display: 'flex', justifyContent: 'center', color: '#495E57'}}>Reservations</h2>
                 <fieldset>
                     <label htmlFor="date">Date</label>
                     <input id="date" type="date" value={date} onChange={handleDateChange} required/>
-                    <label htmlFor="time">Time</label>
-                    <select id="time" value={props.availableTimes} onChange={(e)=>props.setAvailableTimes(e.target.value)}>
-                        {props.availableTimes.map((time, index) => (
-                            <option key={index} value={time}>
-                            {time}
-                            </option>
-                        ))}
-                    </select>
+                    <label htmlFor="time">Time </label>
+                        <select id="time" ref={selectRefTime}>
+                             {props.availableTimes.map((availableTime) => (
+                                <option value={availableTime}>{availableTime}</option>
+                            ))}
+                        </select>
                     <label htmlFor="guests">Guests</label>
                     <input id="guests" type="number" min={1} max={12} value={guests} onChange={(e)=>setGuests(e.target.value)} required/>
                     <label htmlFor="occasion">Occasion</label>
-                    <select id="occasion" value={props.occasion} onChange={(e)=>props.setOccasion(e.target.value)}>
-                        {props.occasion.map((occasion, index) => (
-                            <option key={index} value={occasion}>
-                            {occasion}
-                            </option>
-                        ))}
-                    </select>
+                        <select id="occasion" ref={selectRefOccasion}>
+                             {props.occasion.map((occasion) => (
+                                <option value={occasion}>{occasion}</option>
+                            ))}
+                        </select>
                 </fieldset>
                 <fieldset>
                     <label htmlFor="name">Name</label>
                     <input value={name} id="name" onChange={(e)=>setName(e.target.value)} required/>
                     <label htmlFor="email">Email</label>
-                    <input value={email} id="email" onChange={(e)=>setEmail(e.target.value)} required/>
+                    <input type="mail" value={email} id="email" onChange={(e)=>setEmail(e.target.value)} required/>
                     <label htmlFor="phonenumber">Phone number</label>
                     <input value={phone} id="phonenumber" onChange={(e)=>setPhone(e.target.value)}/>
                 </fieldset>
                 <fieldset>
-                    <Button text={'Book a table'}></Button>
+                    <Button text={'Book a table'} onClick={handleSubmit}></Button>
                 </fieldset>
             </form>
         </div>
