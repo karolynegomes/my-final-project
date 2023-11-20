@@ -8,21 +8,21 @@ import Hamburg from '../components/icons_assets/🦆 icon _hamburger menu.svg'
 function Nav () {
     return (
     <div style={{display: 'flex', flexDirection: 'column'}}>
-        <nav>
-            {/* Desktop version */}
-                <ul>
-                    <li><Link to="/" className="nav-item"><img className="logo" src={require ('./photos/logo.png')} alt='logo'/></Link></li>
-                    <li><Link to ="/" className="nav-item">Home</Link></li>
-                    <li><Link to ="#about" className="nav-item">About</Link></li>
-                    <li><Link to ="menu" className="nav-item">Menu</Link></li>
-                    <li><Link to ="#reservations" className="nav-item">Reservations</Link></li>
-                </ul>
-
-            {/* Mobile version */}
-
-
-            
-            <img src={Hamburg}></img>
+        <nav className="navbar">
+            <div className="container">
+                <div className="logo">
+                    <img src={require ('./photos/logo.png')} alt='logo'/>
+                </div>
+                <div className="nav-elements">
+                    <ul>
+                        {/*<li><Link to="/" className="nav-item"><img className="logo" src={require ('./photos/logo.png')} alt='logo'/></Link></li>*/}
+                        <li><Link to ="/" className="nav-item">Home</Link></li>
+                        <li><Link to ="#about" className="nav-item">About</Link></li>
+                        <li><Link to ="menu" className="nav-item">Menu</Link></li>
+                        <li><Link to ="#reservations" className="nav-item">Reservations</Link></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
         <Routes>
         <Route path="/"/>

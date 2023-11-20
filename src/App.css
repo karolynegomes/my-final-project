@@ -39,31 +39,47 @@
 
 /* Header + Nav */
 
-nav {
-  display: block;
-  background-color:#EDEFEE;
-}
-
-nav ul {
-  display:flex;
-  justify-content: space-evenly;
+.container {
+  margin: 1vh;
+  margin-left: 10vh;
+  margin-right: 3vh;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-left: 5%;
-  margin-right: 5%;
 }
 
-.nav-item {
+.navbar {
+  background-color: #EDEFEE;
+}
+
+.nav-elements ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.nav-elements ul li:not(:last-child) {
+  margin-right: 1vh;
+}
+
+.nav-elements ul a {
+  font-size: 16;
+  font-weight: 400;
+  color: #495E57;
   text-decoration: none;
 }
 
-.logo {
-  max-width: 10%;
+.nav-elements ul a.active {
+  color: #495E57;
+  font-weight: 500;
+  position: relative;
 }
-/*
-nav > ul {
-  display: flex;
+
+.nav-elements ul a.active::after {
+  width: 100%;
+  background-color: #495E57;
 }
-*/
+
 main {
   display: flex;
   flex-direction:column;
@@ -218,7 +234,7 @@ fieldset {
   align-items: center;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 1px) and (max-width: 375px) {
   .herosection-photo, .about-photo {
     display: none;
   }
@@ -232,7 +248,13 @@ fieldset {
   }
 }
 
-@media screen and (max-width: 768px) {
+.h3-special {
+  font-family: sans-serif;
+  margin: 12px;
+  color: #333333;
+}
+
+@media screen and (min-width: 376px) and (max-width: 767px) {
   .herosection-photo, .about-photo {
     display: none;
   }
@@ -246,7 +268,7 @@ fieldset {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .herosection-photo, .about-photo {
     display: none;
   }
@@ -256,5 +278,21 @@ fieldset {
   }
   .special-photo {
     max-width: 18vh;
+  }
+  .h3-special {
+    font-size: small;
+  }
+}
+
+@media screen and (min-width: 1024) and (max-width: 3000) {
+  .herosection-photo, .about-photo {
+    display: none;
+  }
+  .special, .Review {
+    display: flex;
+    align-items: center;
+  }
+  .special-photo {
+    max-width: 2vh;
   }
 }
