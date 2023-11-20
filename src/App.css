@@ -207,6 +207,17 @@ fieldset {
   border: 0;
 }
 
+.special-photo {
+  max-width: 30vh;
+  margin: 1vh;
+}
+
+.about-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media screen and (max-width: 375px) {
   .herosection-photo, .about-photo {
     display: none;
@@ -214,20 +225,36 @@ fieldset {
   .special, .Review {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   .special-photo {
-    max-width: 30px;
+    max-width: 33vh;
   }
-
-
 }
-/*
+
 @media screen and (max-width: 768px) {
-  img {
+  .herosection-photo, .about-photo {
     display: none;
-  }}
+  }
+  .special, .Review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .special-photo {
+    max-width: 27vh;
+  }
+}
 
 @media screen and (max-width: 1024px) {
-  img {
+  .herosection-photo, .about-photo {
     display: none;
-  }}*/
+  }
+  .special, .Review {
+    display: flex;
+    align-items: center;
+  }
+  .special-photo {
+    max-width: 18vh;
+  }
+}

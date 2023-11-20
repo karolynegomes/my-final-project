@@ -8,7 +8,7 @@ import Special from "./Special";
 function Highlights () {
     return (
         <section className='Highlights'>
-                <section style={{display: 'flex', justifyContent: 'space-between'}}>
+                <section style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                     <h1 style={{color: "#495E57", fontSize: 25}}>Specials</h1>
                     <Button text={'Online menu'}></Button>
                 </section>

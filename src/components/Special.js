@@ -5,7 +5,7 @@ function Special (props) {
         <section style={{display: 'flex', flexDirection: 'column', backgroundColor: '#495e5743', borderRadius: 8, maxWidth: 270, margin: 15}}>
             {/*<img style={{display: 'flex', minWidth: 256, maxWidth: 256, minHeight: 172, maxHeight: 172, margin: 7, borderRadius: 8}} src={props.image}></img>*/}
             <div>
-            <img className="special-photo" src={props.image} style={{maxWidth:255, margin: 7}}></img>
+            <img className="special-photo" src={props.image}></img>
             </div>
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
                 <h3 style={{fontFamily: 'sans-serif', margin: 7, color: '#333333'}}>{props.name}</h3>
