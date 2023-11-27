@@ -3,34 +3,32 @@ import {Routes, Route} from 'react-router-dom';
 import About from './About';
 import Menu from './Menu';
 import BookForm from './BookForm';
-import Hamburg from '../components/icons_assets/🦆 icon _hamburger menu.svg'
+import NavScrollButton from './NavScrollButton';
 
 function Nav () {
     return (
-    <div style={{display: 'flex', flexDirection: 'column'}}>
-        <nav className="navbar">
-            <div className="container">
-                <div className="logo">
-                    <img src={require ('./photos/logo.png')} alt='logo'/>
+    <nav>
+        <div style={{display: 'flex', flexDirection: 'column'}}>
+            <nav className="navbar">
+                <div className="container">
+                    <div className="nav-elements">
+                        <ul>
+                            <li><Link to ="/"> <img className="logo-photo" src={require ('./photos/logo.png')} alt='logo'/></Link></li>
+                            <li><NavScrollButton target="#reservations" text="Reservations" /></li>
+                            <li><NavScrollButton target="#testimonials" text="Testimonials" /></li>
+                            <li><NavScrollButton target="#about" text="About" /></li>
+                        </ul>
+                    </div>
                 </div>
-                <div className="nav-elements">
-                    <ul>
-                        {/*<li><Link to="/" className="nav-item"><img className="logo" src={require ('./photos/logo.png')} alt='logo'/></Link></li>*/}
-                        <li><Link to ="/" className="nav-item">Home</Link></li>
-                        <li><Link to ="#about" className="nav-item">About</Link></li>
-                        <li><Link to ="menu" className="nav-item">Menu</Link></li>
-                        <li><Link to ="#reservations" className="nav-item">Reservations</Link></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <Routes>
-        <Route path="/"/>
-        <Route path="/About" element= {<About/>}/>
-        <Route path="/Menu" element= {<Menu/>}/>
-        <Route path="/Reservations" element= {<BookForm/>}/>
-      </Routes>
-    </div>
+            </nav>
+            <Routes>
+            <Route path="/"/>
+            <Route path="/About" element= {<About/>}/>
+            <Route path="/Menu" element= {<Menu/>}/>
+            <Route path="/Reservations" element= {<BookForm/>}/>
+        </Routes>
+        </div>
+    </nav>
     )
 }
 

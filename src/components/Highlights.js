@@ -10,7 +10,6 @@ function Highlights () {
         <section className='Highlights'>
                 <section style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                     <h1 style={{color: "#495E57", fontSize: 25}}>Specials</h1>
-                    <Button text={'Online menu'}></Button>
                 </section>
                 <section className="special">
                     <Special image={GreekSalad} name={'Greek salad'} price={'12.99€'} description={'This is the special description. This is a very special dish. It has fresh ingredients.'}></Special>

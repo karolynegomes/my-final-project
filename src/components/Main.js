@@ -4,22 +4,47 @@ import Highlights from './Highlights';
 import Testimonials from './Testimonials';
 import About from './About';
 import BookForm from './BookForm';
-import { useState, useReducer } from 'react';
+import { useReducer } from 'react';
+import ScrollButton from './ScrollButton';
+import { Element } from 'react-scroll';
+
 
 function Main () {
 
-    function updateTimes ()  {
-        return ({availableTimes})
+
+    const seedRandom = function (seed) {
+        var m = 2**35 -31;
+        var a = 185852;
+        var s = seed% m;
+        return function() {
+            return (s = s*a % m)/m
+        }
+    };
+
+    const fetchAPI = function (date) {
+        let result = [];
+        let random = seedRandom(date.getDate());
+        for (let i = 17; i <= 23; i++){
+            if (random() < 0.5){
+                result.push (i + ':00');
+
+            }
+            if (random() > 0.5){
+                result.push (i + ':30');
+            }
+        }
+        return result;
     }
 
-    function initializeTimes () {
-        return ({availableTimes} = '')
+    function updateTimes (state, date)  {
+        return {availableTimes: fetchAPI (new Date())}
     }
+
+    const initializeTimes = {availableTimes: fetchAPI (new Date())};
 
     const [state, dispatch] = useReducer(updateTimes, initializeTimes)
 
     const availableTimes = [
-        'Click to select a time',
         '12:00 - 13:00',
         '13:00 - 14:00',
         '14:00 - 15:00',
@@ -31,22 +56,20 @@ function Main () {
       ];
 
     const occasion = [
-        'Click to select an occasion',
         'Birthday',
         'Anniversary',
         'Engagement',
         'Other',
-
       ];
 
 
     return (
         <main>
-            <HeroSection></HeroSection>
+            <HeroSection><ScrollButton target="bookform" text="Scroll to BookForm" /></HeroSection>
             <Highlights></Highlights>
-            <BookForm updateTimes={updateTimes} occasion={occasion} availableTimes={availableTimes}></BookForm>
-            <Testimonials></Testimonials>
-            <About></About>
+            <Element name="#reservations"><BookForm updateTimes={updateTimes} occasion={occasion} availableTimes={availableTimes} dispatch={dispatch}></BookForm></Element>
+            <Element name="#testimonials"><Testimonials></Testimonials></Element>
+            <Element name="#about"><About></About></Element>
         </main>
     )
 }

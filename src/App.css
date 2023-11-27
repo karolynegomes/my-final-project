@@ -40,9 +40,7 @@
 /* Header + Nav */
 
 .container {
-  margin: 1vh;
-  margin-left: 10vh;
-  margin-right: 3vh;
+  display: flex;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,35 +48,34 @@
 
 .navbar {
   background-color: #EDEFEE;
+
 }
 
-.nav-elements ul {
+.nav-elements {
   display: flex;
+  width: 45%;
+}
+
+
+.nav-elements ul {
+  display: flex;}
+  /*align-items: center;
   justify-content: space-between;
   list-style-type: none;
 }
 
 .nav-elements ul li:not(:last-child) {
   margin-right: 1vh;
+
 }
 
-.nav-elements ul a {
+.nav-elements ul {
   font-size: 16;
   font-weight: 400;
   color: #495E57;
   text-decoration: none;
 }
-
-.nav-elements ul a.active {
-  color: #495E57;
-  font-weight: 500;
-  position: relative;
-}
-
-.nav-elements ul a.active::after {
-  width: 100%;
-  background-color: #495E57;
-}
+*/
 
 main {
   display: flex;
@@ -135,6 +132,8 @@ img {
 }
 
 .Testimonials {
+  display: flex;
+  flex-direction: column;
   background-color: #495E57;
 }
 
@@ -234,6 +233,20 @@ fieldset {
   align-items: center;
 }
 
+
+.h3-special {
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 12px;
+  padding: 1vh;
+  color: #333333;
+}
+
+
+.herosection-photo {
+  min-width: 20vh;
+}
+
 @media screen and (min-width: 1px) and (max-width: 375px) {
   .herosection-photo, .about-photo {
     display: none;
@@ -248,12 +261,6 @@ fieldset {
   }
 }
 
-.h3-special {
-  font-family: sans-serif;
-  margin: 12px;
-  color: #333333;
-}
-
 @media screen and (min-width: 376px) and (max-width: 767px) {
   .herosection-photo, .about-photo {
     display: none;
@@ -263,10 +270,8 @@ fieldset {
     flex-direction: column;
     align-items: center;
   }
-  .special-photo {
-    max-width: 27vh;
-  }
 }
+
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .herosection-photo, .about-photo {
@@ -274,13 +279,8 @@ fieldset {
   }
   .special, .Review {
     display: flex;
+    flex-direction: column;
     align-items: center;
-  }
-  .special-photo {
-    max-width: 18vh;
-  }
-  .h3-special {
-    font-size: small;
   }
 }
 
@@ -292,7 +292,32 @@ fieldset {
     display: flex;
     align-items: center;
   }
-  .special-photo {
-    max-width: 2vh;
-  }
+}
+
+
+
+.submit-btn {
+  border-radius: 1vh;
+  background-color: #F4CE14;
+  font-family: sans-serif;
+  color: #333333;
+  max-height: fit-content;
+  max-width: fit-content;
+  min-height: fit-content;
+  min-width: fit-content;
+  margin: 2vh;
+}
+
+.submit-btn:disabled {
+  border-radius: 1vh;
+  background-color: #bfb99c;
+  font-family: sans-serif;
+  color: #767373;
+  max-height: 4vh;
+  min-height: 4vh;
+  max-height: fit-content;
+  max-width: fit-content;
+  min-height: fit-content;
+  min-width: fit-content;
+  margin: 2vh;
 }

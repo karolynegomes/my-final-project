@@ -1,5 +1,7 @@
 import React from 'react';
-import Button from './Button';
+import BookForm from './BookForm';
+import ScrollButton from './ScrollButton';
+import { Element } from 'react-scroll';
 
 function HeroSection () {
     return (
@@ -15,10 +17,9 @@ function HeroSection () {
                         A culinary gem in Somelocation, where freshness and flavor unite. Our vibrant menu, crafted with locally sourced ingredients, offers a delightful dining experience. From zesty salads to delectable entrees, savor the essence of modern cuisine in a charming ambiance. Unforgettable moments, one bite at a time.
                         A culinary gem in Somelocation, where freshness and flavor unite. Our vibrant menu, crafted with locally sourced ingredients, offers a delightful dining experience. From zesty salads to delectable entrees, savor the essence of modern cuisine in a charming ambiance. Unforgettable moments, one bite at a time.
                     </p>
-                    <Button text={'Book a table'}></Button>
-                </div >
-                <img className='herosection-photo' src={require('./photos/restauranfood.jpg')} style={{maxWidth: 150, margin:50}}/>
+                    <ScrollButton target="#reservations" text="Book a table" />
                 </div>
+            </div>
             </div>
         </section>
     )

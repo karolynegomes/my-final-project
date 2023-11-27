@@ -1,14 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import BookForm from './components/BookForm.js';
 
-test('renders learn react link', () => {
-  /*render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();*/
+test('Check if the label Date exists', () => {
   const checkText = jest.fn();
   render (<BookForm onSubmit={checkText}/>)
 
-  const checkLabel = screen.getByLabelText(/Name/);
+  const checkLabel = screen.getByLabelText(/Date/);
   expect(checkLabel).toBeInTheDocument();
   })
-g

@@ -2,18 +2,21 @@ import './App.css';
 import Nav from './components/Nav';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import { useEffect} from 'react';
 
 
 function App() {
+
+  useEffect(() => {
+    fetchData();
+  }, []); // Empty dependency array means this effect runs once when the component mounts
+
+  function fetchData() {
+    const apiUrl = 'https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js';
+  }
+
   return (
     <>
-      <head>
-        <meta name="description" content="Modern webapp"/>
-        <meta name="og:title" content="Little Lemon"/>
-        <meta name="og:description" content="Fresh and healthy food"/>
-        <meta name="og:image" content=""/>
-      </head>
-
       <Nav></Nav>
       <Main></Main>
       <Footer></Footer>

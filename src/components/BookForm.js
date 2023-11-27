@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Button from './Button';
 
 function BookForm (props) {
@@ -8,8 +8,8 @@ function BookForm (props) {
     const [phone, setPhone] = useState("");
     const [date, setDate] = useState("");
     const [guests, setGuests] = useState("");
-    const selectRefTime = useRef(null);
-    const selectRefOccasion = useRef(null);
+    const [times, setTimes] = useState("");
+    const [occasion, setOccasion] = useState("");
 
 
     const handleSubmit = (e) => {
@@ -19,52 +19,49 @@ function BookForm (props) {
         setPhone("");
         setDate("");
         setGuests("");
-        selectRefTime.current.value = "Caca";
-        selectRefOccasion.current.value = "Culo";
+        setOccasion("");
+        setTimes("");
+        alert("Your reservation has been registered.");
     }
 
     const handleDateChange = (e) => {
-        const selectedDate = e.target.value;
-        setDate(selectedDate);
-        props.updateTimes(selectedDate);
+        setDate(e);
+        props.dispatch(e);
       };
 
-
     return(
-        <div id="reservations" className="reservations" style={{display: 'flex', justifyContent: 'center'}}>
+        <section id="reservations" className="reservations" style={{display: 'flex', justifyContent: 'center'}}>
             <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column'}}>
             <h2 style={{display: 'flex', justifyContent: 'center', color: '#495E57'}}>Reservations</h2>
                 <fieldset>
-                    <label htmlFor="date">Date</label>
-                    <input id="date" type="date" value={date} onChange={handleDateChange} required/>
-                    <label htmlFor="time">Time </label>
-                        <select id="time" ref={selectRefTime}>
-                             {props.availableTimes.map((availableTime) => (
-                                <option value={availableTime}>{availableTime}</option>
-                            ))}
+                    <label htmlFor="date">Date <b style={{color: "red"}}>*</b></label>
+                    <input id="date" type="date" value={date} onChange={(e)=>handleDateChange(e.target.value)} required/>
+                    <label htmlFor="time">Time <b style={{color: "red"}}>*</b></label>
+                        <select id="time" value={times} onChange={(e)=>setTimes(e.target.value)} required>
+                            <option value="">Click to select occasion</option>
+                             {props.availableTimes.map(availableTimes => {return <option key={availableTimes}>{availableTimes}</option>})}
                         </select>
-                    <label htmlFor="guests">Guests</label>
+                    <label htmlFor="guests">Guests <b style={{color: "red"}}>*</b></label>
                     <input id="guests" type="number" min={1} max={12} value={guests} onChange={(e)=>setGuests(e.target.value)} required/>
-                    <label htmlFor="occasion">Occasion</label>
-                        <select id="occasion" ref={selectRefOccasion}>
-                             {props.occasion.map((occasion) => (
-                                <option value={occasion}>{occasion}</option>
-                            ))}
+                    <label htmlFor="occasion">Occasion <b style={{color: "red"}}>*</b></label>
+                        <select id="occasion" key={occasion} value={occasion} onChange={(e)=>setOccasion(e.target.value)} required>
+                            <option value="">Click to select time</option>
+                            {props.occasion.map(occasion => {return <option key={occasion}>{occasion}</option>})}
                         </select>
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name">Full name <b style={{color: "red"}}>*</b></label>
                     <input value={name} id="name" onChange={(e)=>setName(e.target.value)} required/>
-                    <label htmlFor="email">Email</label>
-                    <input type="mail" value={email} id="email" onChange={(e)=>setEmail(e.target.value)} required/>
+                    <label htmlFor="email">Email <b style={{color: "red"}}>*</b></label>
+                    <input type="email" value={email} id="email" onChange={(e)=>setEmail(e.target.value)} required/>
                     <label htmlFor="phonenumber">Phone number</label>
-                    <input value={phone} id="phonenumber" onChange={(e)=>setPhone(e.target.value)}/>
+                    <input type="text" pattern="[0-9]*" value={phone} id="phonenumber" onChange={(e)=>setPhone(e.target.value)}/>
                 </fieldset>
                 <fieldset>
-                    <Button text={'Book a table'} onClick={handleSubmit}></Button>
+                    <Button id="submit-button" text={'Book a table'} onSubmit={handleSubmit} disabled={!date || !times || !guests ||!occasion || !name || !email}></Button>
                 </fieldset>
             </form>
-        </div>
+        </section>
     )
 }
 
