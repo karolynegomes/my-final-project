@@ -8,7 +8,7 @@ const ScrollButton = ({ target, text }) => {
         spy={true}
         smooth={true}
         offset={-70} // Adjust the offset as needed
-        duration={500} // Scroll duration in milliseconds
+        duration={750} // Scroll duration in milliseconds
       >
         <button aria-label="On Click" className="submit-btn"><b>{text}</b></button>
       </Link>
