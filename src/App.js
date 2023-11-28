@@ -7,14 +7,6 @@ import { useEffect} from 'react';
 
 function App() {
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  function fetchData() {
-    const apiUrl = 'https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js';
-  }
-
   return (
     <>
       <Header></Header>

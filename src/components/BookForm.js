@@ -39,7 +39,7 @@ function BookForm (props) {
                     <label htmlFor="time">Time <b style={{color: "red"}}>*</b></label>
                         <select id="time" value={times} onChange={(e)=>setTimes(e.target.value)} required>
                             <option value="">Click to select occasion</option>
-                             {props.availableTimes.map(availableTimes => {return <option key={availableTimes}>{availableTimes}</option>})}
+                             {props.availableTimes.availableTimes.map(availableTimes => {return <option key={availableTimes}>{availableTimes}</option>})}
                         </select>
                     <label htmlFor="guests">Guests <b style={{color: "red"}}>*</b></label>
                     <input id="guests" type="number" min={1} max={12} value={guests} onChange={(e)=>setGuests(e.target.value)} required/>
