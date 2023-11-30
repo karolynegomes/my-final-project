@@ -1,11 +1,11 @@
 import React from 'react';
 import HeroSection from './HeroSection';
-import Highlights from './Highlights';
-import Testimonials from './Testimonials';
+import Highlights from './highlights/Highlights';
+import Testimonials from './testimonials/Testimonials';
 import About from './About';
-import BookForm from './BookForm';
+import BookForm from './form/BookForm';
 import { useReducer } from 'react';
-import ScrollButton from './ScrollButton';
+import ScrollButton from './buttons/ScrollButton';
 import { Element } from 'react-scroll';
 import { useNavigate } from "react-router-dom"
 
