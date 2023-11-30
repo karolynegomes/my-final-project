@@ -4,7 +4,7 @@ function Special (props) {
     return (
         <section style={{display: 'flex', flexDirection: 'column', backgroundColor: '#495e5743', borderRadius: 8, margin: 15}}>
             <div>
-            <img className="special-photo" style={{maxWidth:250, minWidth:250}} alt="special dish" src={props.image}></img>
+            <img className="special-photo" style={{maxWidth: 250, minWidth: 250, borderRadius: 8}} alt="special dish" src={props.image}></img>
             </div>
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', minWidht:250, maxWidth:250, minHeight:30, maxHeight:30}}>
                 <h3 className="h3-special">{props.name}</h3>
