@@ -74,7 +74,7 @@ function Main () {
 
     return (
         <main>
-            <HeroSection><ScrollButton target="bookform" text="Scroll to BookForm" /></HeroSection>
+            <Element name="#herosection"><HeroSection><ScrollButton target="bookform" text="Scroll to BookForm" /></HeroSection></Element>
             <Highlights></Highlights>
             <Element name="#reservations"><BookForm occasion={occasion} availableTimes={state} dispatch={dispatch} submitForm={submitForm}></BookForm></Element>
             <Element name="#testimonials"><Testimonials></Testimonials></Element>

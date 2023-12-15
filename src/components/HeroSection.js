@@ -3,7 +3,7 @@ import ScrollButton from './buttons/ScrollButton';
 
 function HeroSection () {
     return (
-        <section className='HeroSection' style={{display: 'flex', flexDirection: 'column'}}>
+        <section id="herosection" className='HeroSection' style={{display: 'flex', flexDirection: 'column'}}>
             <div>
                 <h1 style={{color: "#F4CE14"}}>Little Lemon</h1>
                 <h2 style={{color: "#EDEFEE"}}>Chicago</h2>
